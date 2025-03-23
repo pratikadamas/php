@@ -12,7 +12,7 @@ echo "<br>";
 foreach($cars as $x){
     echo "$x <br>";
 }
-
+echo"";
 
 
 
