@@ -1,0 +1,49 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 20px;
+    background-color: #eef2f3; /* Soft gradient background */
+}
+
+.container {
+    background-color: #ffffff; /* White background */
+    padding: 30px; /* Increased padding */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for elegance */
+}
+
+.doctor-card {
+    border: 1px solid #4CAF50; /* Green border for a fresh look */
+    border-radius: 8px; /* More rounded edges */
+    margin-bottom: 20px;
+    padding: 20px; /* Increased padding */
+    background-color: #f9f9f9; /* Light grey background for cards */
+    transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.doctor-card:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+h2 {
+    text-align: center;
+    color: #336699; /* Deep blue for a professional appearance */
+    font-size: 24px; /* Bigger heading */
+    margin-bottom: 15px; /* Space below heading */
+}
+
+.book-now, .view-profile {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 12px 18px; /* Slightly larger buttons */
+    background-color: #FF6F61; /* Coral color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold; /* Bolder text for buttons */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.book-now:hover, .view-profile:hover {
+    background-color: #FF3B30; /* Darker coral on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}

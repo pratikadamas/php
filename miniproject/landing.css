@@ -1,0 +1,111 @@
+/* Existing styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #334334;
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Align items to the left and right */
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust logo size as needed */
+}
+
+.nav-menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+#hero {
+    position: relative;
+    text-align: center;
+    padding: 50px;
+    background-image: url('phto3.jpg'); /* Image set as background */
+    background-size: cover;
+    height: 450px; /* Adjust height as needed */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* Translucent background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#vision-mission {
+    padding: 40px;
+    text-align: center;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns layout */
+    gap: 20px; /* Space between grid items */
+}
+
+.content-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.content-item img {
+    width: 100%; /* Full width */
+    height: auto; /* Auto height */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
