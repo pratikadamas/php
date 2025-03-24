@@ -11,6 +11,9 @@
         <input type="radio" name="cradit_card" value="visa">visa
         <input type="radio" name="cradit_card" value="master">master
         <input type="radio" name="cradit_card" value="paypal">paypal
+        <input type="radio" name="cradit_card" value="american express">american express
+        <input type="radio" name="cradit_card" value="rupay">rupay
+
         <input type="submit"  name="select"value="submit">
     </form>
     <?php
