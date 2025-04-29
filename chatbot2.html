@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #chatbox { width: 50%; margin: auto; padding: 20px; border: 1px solid #ddd; height: 300px; overflow-y: auto; }
+        .message { padding: 10px; margin: 5px; border-radius: 5px; }
+        .user { background-color: #007bff; color: white; text-align: right; }
+        .bot { background-color: #f1f1f1; text-align: left; }
+        input, button { padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Healthcare Chatbot</h2>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Ask about health..." onkeypress="handleKeyPress(event)">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function handleKeyPress(event) {
+            if (event.key === "Enter") sendMessage();
+        }
+
+        function sendMessage() {
+            var userInput = document.getElementById("userInput").value;
+            if (userInput.trim() === "") return;
+            
+            document.getElementById("chatbox").innerHTML += `<div class='message user'>${userInput}</div>`;
+            document.getElementById("userInput").value = "";
+
+            fetch("chatbot.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "message=" + encodeURIComponent(userInput)
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("chatbox").innerHTML += `<div class='message bot'>${data}</div>`;
+                document.getElementById("chatbox").scrollTop = document.getElementById("chatbox").scrollHeight;
+            });
+        }
+    </script>
+</body>
+</html>
