@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot UI</title>
+    <link rel="stylesheet" href="chatbot.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chatbot</h2>
+        </div>
+        
+        <div class="chat-box" id="chat-box">
+            <div class="chat-message bot-message">
+                <p>Hello! How can I assist you today?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chat-input" placeholder="Type a message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('send-btn').addEventListener('click', function() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (message) {
+                const chatBox = document.getElementById('chat-box');
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('chat-message', 'user-message');
+                userMessage.innerHTML = `<p>${message}</p>`;
+                chatBox.appendChild(userMessage);
+                input.value = '';
+                chatBox.scrollTop = chatBox.scrollHeight;
+    
+                // Simulate bot response
+                setTimeout(() => {
+                    const botMessage = document.createElement('div');
+                    botMessage.classList.add('chat-message', 'bot-message');
+    
+                    // Custom response for "hi"
+                    if (message.toLowerCase() === 'hi') {
+                        botMessage.innerHTML = `<p>Hello! How can I assist you today?</p>`;
+                    } else {
+                        <!-- botMessage.innerHTML = `<p>I'm sorry, I didn't understand that. Can you please rephrase?</p>`; -->
+                    }
+    
+                    chatBox.appendChild(botMessage);
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
